@@ -1,1 +1,1 @@
-Check me out over at https://chadmandoo.github.io/
+Check me out over at https://www.chadpeppers.com
