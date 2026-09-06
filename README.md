@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/hero.svg" alt="An Omarchy bar across the top, a sun on its arc over the words Chad Peppers: open source, built with agents, on Omarchy" width="100%">
+<img src="assets/hero.svg" alt="Chad Peppers: open source, built with agents, in the open. Beside the name, a terminal shows a gated workflow run passing plan, code, test and complete." width="100%">
 
 # Hey, I'm Chad
 
