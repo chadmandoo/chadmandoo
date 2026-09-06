@@ -4,11 +4,11 @@
 
 # Hey, I'm Chad
 
-### Open source advocate at Ignibyte. I build on Omarchy, with an assistant that lives on it, and I publish what we build.
+### Open source advocate at Ignibyte. I build with agents, in the open, on Omarchy, and I publish what we build.
 
-<a href="https://github.com/Ignibyte"><img alt="Ignibyte" src="https://img.shields.io/badge/lab-Ignibyte-7aa2f7?style=for-the-badge&labelColor=1a1b26"></a>
-<a href="https://omarchy.org"><img alt="Omarchy" src="https://img.shields.io/badge/desktop-Omarchy%20%2F%20Hyprland-bb9af7?style=for-the-badge&labelColor=1a1b26"></a>
-<a href="https://github.com/Ignibyte/rusty"><img alt="Rusty" src="https://img.shields.io/github/stars/Ignibyte/rusty?style=for-the-badge&label=rusty&color=9ece6a&labelColor=1a1b26"></a>
+<a href="https://droost.org"><img alt="Droost" src="https://img.shields.io/badge/droost-Drupal%20built%20by%20agents-7aa2f7?style=for-the-badge&labelColor=1a1b26"></a>
+<a href="https://github.com/Ignibyte"><img alt="Ignibyte" src="https://img.shields.io/badge/lab-Ignibyte-bb9af7?style=for-the-badge&labelColor=1a1b26"></a>
+<a href="https://omarchy.org"><img alt="Omarchy" src="https://img.shields.io/badge/desktop-Omarchy%20%2F%20Hyprland-9ece6a?style=for-the-badge&labelColor=1a1b26"></a>
 <a href="https://chadpeppers.dev"><img alt="chadpeppers.dev" src="https://img.shields.io/badge/links-chadpeppers.dev-e0af68?style=for-the-badge&labelColor=1a1b26"></a>
 
 </div>
@@ -17,18 +17,65 @@
 
 Two things I care about turned out to be one project: **open source you can actually run**, and **agents that do the work in the open**, with the record of how they did it.
 
-The desk is [Omarchy](https://omarchy.org), DHH's Arch and Hyprland desktop. The assistant is [Rusty](https://github.com/Ignibyte/rusty), a local-first AI assistant I built for it. The lab is [Ignibyte](https://ignibyte.com), where the research becomes code, workflows and write-ups anyone can pick up.
+The lab is [Ignibyte](https://ignibyte.com), where the research becomes code, workflows and write-ups anyone can pick up. The desk is [Omarchy](https://omarchy.org), DHH's Arch and Hyprland desktop. The assistant is [Rusty](https://github.com/Ignibyte/rusty), which I built for it.
 
 ---
 
-## Part One: on the bar
+## Droost
 
-Omarchy plugins, installable with `omarchy plugin add`, bound to the system theme so they re-tint with everything else.
+Drupal, built by agents. Droost is a developer-acceleration toolkit for AI coding agents working on Drupal: a [drupal.org project](https://www.drupal.org/project/droost), the engine behind it, and the pipeline an agent runs. Live at [droost.org](https://droost.org).
 
-| Plugin | What it does |
+| Repo | What it is |
 |---|---|
+| **[droost-engine](https://github.com/Ignibyte/droost-engine)** | The framework-free half, plain PHP with no Drupal dependency: the QA verify loop, AI-harness config writers, a guidelines corpus, scaffold generation, wiki composition and code indexing, so the same logic serves the Drupal module, a standalone CLI and repo-only tooling with no site to boot. |
+| **[droost-workflow](https://github.com/Ignibyte/droost-workflow)** | The methodology layer: the phased, gated pipeline an agent runs to build or change a Drupal site. Plan, code, test, complete, each phase behind an entry and an exit gate, with what "pass" means configured per repo in one version-controlled file. |
+| **[droost.org](https://droost.org)** | The site and the write-ups. |
+
+## agent-bridge
+
+**[ignibyte-bridge](https://github.com/Ignibyte/ignibyte-bridge)** is a local persistent PTY session controller for AI coding agents. A manager program, another agent, a script or you, starts real terminal programs (Claude Code, Codex, REPLs, dev servers, shells), keeps them running, drives them with keystrokes and reads back what is on their screen. What tmux gives a person, exposed to an agent through a small CLI. Validated driving a live Claude Code session; its own adversarial reviews and their resolutions are in the repo.
+
+## jqstar
+
+**[jqstar](https://github.com/Ignibyte/jqstar)** is a full-featured front end for server-rendered applications that do not want to become single-page applications. Routes, validation, permissions and data stay on the server; HTML stays readable before JavaScript runs; reactivity and rich components go where they are needed, updating parts of the page through HTML, JSON or Datastar streams. No JSX, no hydration, no virtual DOM, and your existing templates and jQuery plugins keep working.
+
+## Omarchy
+
+The desktop I run every day, and what I build on it. The plugins install with `omarchy plugin add` and bind to the system theme, so they re-tint with everything else.
+
+| Repo | What it is |
+|---|---|
+| **[rusty](https://github.com/Ignibyte/rusty)** | A local-first AI assistant for Omarchy: a Rust workspace with a QML desktop app, an MCP back end, an Obsidian-compatible brain, and native Claude Code and Codex terminals. The Claude Code session on my box *is* Rusty; the app is the same store with a face. |
 | **[Stay Awake Sessions](https://github.com/Ignibyte/omarchy-stay-awake-sessions)** | Keep the machine awake for a reason that ends by itself: a deadline, a running process, an app with a window open, or any condition you can write as a command. Holds survive shell restarts and reloads. On the Omarchy marketplace. |
 | **[Sun Clock](https://github.com/Ignibyte/omarchy-kids-clock)** | A clock for kids, a spoke of [Omarchy Kids](https://github.com/markcuda/omarchy-kids-mode). Where the sun is over the people you love, whether they are awake, and whether it is a good time to call. Three age bands, an analog face, a set-the-clock game, a world map with the night side, a globe of dots. |
+| **[Omarchy Gaming System](https://github.com/Ignibyte/omarchy_gaming_system)** | An API-first social gaming system: a Rust server and a keyboard-first QML connector for Omarchy. Connections, private inboxes, challenges and server-authoritative games. |
+
+### How Rusty keeps me honest
+
+```mermaid
+flowchart LR
+    ASK["brain_ask<br/>consult before deciding"] --> DECIDE["brain_decide<br/>the call, and what it rested on"]
+    DECIDE --> WORK["the work"]
+    WORK --> FOLLOW["brain_follow_up<br/>how it went, two weeks on"]
+    FOLLOW --> ASK
+```
+
+Two hooks enforce the loop: the first file write of a session is refused until the brain has been consulted, and a session that wrote files cannot end until it has recorded a decision or said there was none.
+
+| Component | Count | What it is |
+|---|---|---|
+| **MCP tools** | 85 | Tasks, notes, memories, the brain, skills, secrets, settings, sources |
+| **Skills** | 28 | Slash commands that live in Rusty's store and show in the app |
+| **Brain pages** | 255 | Projects, concepts, decisions, conversations and ideas, one vault |
+| **Decisions recorded** | 11 | Each with its consultation, its alternatives and a follow-up date |
+| **Tickets delivered** | 28 | Through a phased pipeline, each with a gate receipt |
+
+```mermaid
+flowchart LR
+    R["recall"] --> P["plan"] --> D["design"] --> I["implement"] --> N["inspect"] --> V["validate"] --> C["complete"] --> Y["delivery"]
+```
+
+`cargo fmt`, `clippy -D warnings`, `cargo test` and `cargo doc`, one at a time, no suppressions; a commit without a matching gate receipt is refused by a hook. Before anything ships, adversarial reviewers go over it. The last round on Sun Clock found twenty wrong time zones, a sunrise equation that made New Zealand night all day on summer time, and a typed place that could hang the clock, all fixed before the first push.
 
 ### Rules I paid for
 
@@ -41,62 +88,21 @@ Omarchy plugins, installable with `omarchy plugin add`, bound to the system them
 
 ---
 
-## Part Two: the assistant
-
-[Rusty](https://github.com/Ignibyte/rusty) is a local-first AI assistant for Omarchy: a Rust workspace with a QML desktop app, an MCP back end, an Obsidian-compatible brain, and native Claude Code and Codex terminals. The Claude Code session on the box *is* Rusty; the app is the same store with a face.
-
-```mermaid
-flowchart LR
-    ASK["brain_ask<br/>consult before deciding"] --> DECIDE["brain_decide<br/>the call, and what it rested on"]
-    DECIDE --> WORK["the work"]
-    WORK --> FOLLOW["brain_follow_up<br/>how it went, two weeks on"]
-    FOLLOW --> ASK
-```
-
-Two hooks keep that loop honest: the first file write of a session is refused until the brain has been consulted, and a session that wrote files cannot end until it has recorded a decision or said there was none.
-
-| Component | Count | What it is |
-|---|---|---|
-| **MCP tools** | 85 | Tasks, notes, memories, the brain, skills, secrets, settings, sources |
-| **Skills** | 28 | Slash commands that live in Rusty's store and show in the app |
-| **Brain pages** | 255 | Projects, concepts, decisions, conversations and ideas, one vault |
-| **Decisions recorded** | 11 | Each with its consultation, its alternatives and a follow-up date |
-| **Timeline entries** | 286 | What happened, on which page, when |
-| **Tickets delivered** | 28 | Through the pipeline below, each with a gate receipt |
-
-### The pipeline
-
-```mermaid
-flowchart LR
-    R["recall"] --> P["plan"] --> D["design"] --> I["implement"] --> N["inspect"] --> V["validate"] --> C["complete"] --> Y["delivery"]
-```
-
-`cargo fmt`, `clippy -D warnings`, `cargo test` and `cargo doc`, one at a time, no suppressions; a commit without a matching gate receipt is refused by a hook. Before anything ships, adversarial reviewers go over it. The last round on Sun Clock found twenty wrong time zones, a sunrise equation that made New Zealand night all day on summer time, and a typed place that could hang the clock, all fixed before the first push.
-
----
-
-## Part Three: the lab
-
-[Ignibyte](https://ignibyte.com) is an agentic research lab. The outputs are open source code, the method as runnable workflows, and write-ups.
+## Also in the lab
 
 | Repo | What it is |
 |---|---|
-| **[rusty](https://github.com/Ignibyte/rusty)** | The assistant above. |
-| **[droost-engine](https://github.com/Ignibyte/droost-engine)** and **[droost-workflow](https://github.com/Ignibyte/droost-workflow)** | The engine and the phased, gated pipeline an agent runs to build or change a Drupal site. Live at [droost.org](https://droost.org). |
-| **[scorchkit](https://github.com/Ignibyte/scorchkit)** | Agentic-first security system. |
+| **[scorchkit](https://github.com/Ignibyte/scorchkit)** | An agent-neutral application-security testing engine in Rust: deterministic SAST, SCA, secret, artifact, web and API checks behind one engagement policy, with findings and evidence kept for an agent or a person to analyse. Only for systems you own or have permission to test. |
 | **[forge](https://github.com/Ignibyte/forge)** | Agentic coding brain. |
-| **[ignibyte-bridge](https://github.com/Ignibyte/ignibyte-bridge)** | Local persistent PTY session controller for AI coding agents. Like tmux, for agents. |
-| **[oathstar](https://github.com/Ignibyte/oathstar)** | Open source Rust RPG engine. |
+| **[oathstar](https://github.com/Ignibyte/oathstar)** | An open source Rust RPG engine, in design: emergent classes, use-based skills, a Datastar and SSE direction. |
 | **[monorpgmaker](https://github.com/Ignibyte/monorpgmaker)** | An RPG Maker style game maker on MonoGame: author once in C#, ship to desktop and consoles. |
-| **[omarchy_gaming_system](https://github.com/Ignibyte/omarchy_gaming_system)** | Omarchy BBS. |
-| **[jqstar](https://github.com/Ignibyte/jqstar)** | jQuery plus Datastar. |
 
 ---
 
 ## Toolbelt
 
 **Desktop** · Omarchy · Hyprland · Quickshell / QML · Wayland · Arch
-**Languages** · Rust · PHP / Drupal · TypeScript · Python · C# / MonoGame
+**Languages** · PHP / Drupal · Rust · TypeScript · Python · C# / MonoGame
 **Agents** · Claude Code · Codex · MCP · phased pipelines with gate receipts
 **Web** · Datastar · jQuery · Drupal 11 · DDEV
 
