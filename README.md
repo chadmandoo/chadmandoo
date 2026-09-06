@@ -4,12 +4,16 @@
 
 # Hey, I'm Chad
 
-### Open source advocate at Ignibyte. I build with agents, in the open, on Omarchy, and I publish what we build.
+### I point coding agents at real problems and publish what happens: the code as open source, the workflow it ran under, and the write-up.
+
+Co-founder of [Ignibyte](https://ignibyte.com), an agentic research lab. Rust, Drupal, MCP. Retired U.S. Army warrant officer. Kansas City.
 
 <a href="https://droost.org"><img alt="Droost" src="https://img.shields.io/badge/droost-Drupal%20built%20by%20agents-7aa2f7?style=for-the-badge&labelColor=1a1b26"></a>
 <a href="https://github.com/Ignibyte"><img alt="Ignibyte" src="https://img.shields.io/badge/lab-Ignibyte-bb9af7?style=for-the-badge&labelColor=1a1b26"></a>
 <a href="https://omarchy.org"><img alt="Omarchy" src="https://img.shields.io/badge/desktop-Omarchy%20%2F%20Hyprland-9ece6a?style=for-the-badge&labelColor=1a1b26"></a>
-<a href="https://chadpeppers.dev"><img alt="chadpeppers.dev" src="https://img.shields.io/badge/links-chadpeppers.dev-e0af68?style=for-the-badge&labelColor=1a1b26"></a>
+<a href="https://www.drupal.org/u/chadmandoo"><img alt="drupal.org" src="https://img.shields.io/badge/drupal.org-chadmandoo-e0af68?style=for-the-badge&labelColor=1a1b26"></a>
+<a href="https://www.linkedin.com/in/chad-peppers-1686193b0/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Chad%20Peppers-7dcfff?style=for-the-badge&labelColor=1a1b26"></a>
+<a href="https://x.com/chadmandoo123"><img alt="X" src="https://img.shields.io/badge/X-%40chadmandoo123-c0caf5?style=for-the-badge&labelColor=1a1b26"></a>
 
 </div>
 
@@ -92,10 +96,20 @@ flowchart LR
 
 | Repo | What it is |
 |---|---|
-| **[scorchkit](https://github.com/Ignibyte/scorchkit)** | An agent-neutral application-security testing engine in Rust: deterministic SAST, SCA, secret, artifact, web and API checks behind one engagement policy, with findings and evidence kept for an agent or a person to analyse. Only for systems you own or have permission to test. |
+| **[scorchkit](https://github.com/Ignibyte/scorchkit)** | An agent-neutral application-security testing engine in Rust, and the gate in our own pipeline: deterministic SAST, SCA, secret, artifact, web and API checks behind one engagement policy, with findings and evidence kept for an agent or a person to analyse. Only for systems you own or have permission to test. |
 | **[forge](https://github.com/Ignibyte/forge)** | Agentic coding brain. |
 | **[oathstar](https://github.com/Ignibyte/oathstar)** | An open source Rust RPG engine, in design: emergent classes, use-based skills, a Datastar and SSE direction. |
 | **[monorpgmaker](https://github.com/Ignibyte/monorpgmaker)** | An RPG Maker style game maker on MonoGame: author once in C#, ship to desktop and consoles. |
+
+---
+
+## Reading
+
+| | |
+|---|---|
+| **[How the agents work](https://ignibyte.com/method)** | One loop at three sizes, and the workflows as code you can run. |
+| **[Beginner Loop Engineering](https://ignibyte.com/lab/beginner-loop-engineering-documentation-foundation)** | The method from zero, in seven parts. |
+| **[The Lab](https://ignibyte.com/lab)** | What the agents did, and what it took to make them ship. |
 
 ---
 
@@ -108,10 +122,22 @@ flowchart LR
 
 ---
 
+## Elsewhere
+
+| | |
+|---|---|
+| **[Ignibyte on GitHub](https://github.com/Ignibyte)** | The organisation, where the repos live. |
+| **[drupal.org](https://www.drupal.org/u/chadmandoo)** | Droost and its releases. |
+| **[LinkedIn](https://www.linkedin.com/in/chad-peppers-1686193b0/)** | The career, in full. |
+| **[X](https://x.com/chadmandoo123)** | @chadmandoo123 |
+| **[ignibyte.com](https://ignibyte.com)** and **[droost.org](https://droost.org)** | The lab and the Drupal work, written up. |
+
+chadpeppers.dev points here now; this page is the resume.
+
+---
+
 <div align="center">
 
-[chadpeppers.dev](https://chadpeppers.dev) · [ignibyte.com](https://ignibyte.com) · [droost.org](https://droost.org)
-
-*Written on the machine it describes, with Rusty.*
+*This page is open source too, and an agent built it: written on the machine it describes, with Rusty.*
 
 </div>
